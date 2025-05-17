@@ -32,6 +32,11 @@ const uint16_t number_to_function[] PROGMEM = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case GU_TOGG:
+            if (record->event.pressed) {
+                gpio_write_pin(LED_WIN_LOCK_PIN, keymap_config.no_gui);
+            }
+            break;
         case SOCD_TOGGLE:
             if (record->event.pressed) {
                 socd_enabled = !socd_enabled;

@@ -25,19 +25,25 @@ const uint16_t number_to_function[] PROGMEM = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (keycode == SWITCH_FN) {
-        if (record->event.pressed) {
-            fn_mode = !fn_mode;
-        }
-        return false;
+    switch (keycode) {
+        case GU_TOGG:
+            if (record->event.pressed) {
+                gpio_write_pin(LED_WIN_LOCK_PIN, keymap_config.no_gui);
+            }
+            break;
+        case SWITCH_FN:
+            if (record->event.pressed) {
+                fn_mode = !fn_mode;
+            }
+            return false;
     }
 
     if (fn_mode) {
-        if ( ( keycode >= KC_1 && keycode <= KC_0 ) || keycode == KC_MINS || keycode == KC_EQL ) {
+        if ((keycode >= KC_1 && keycode <= KC_0) || keycode == KC_MINS || keycode == KC_EQL) {
             uint8_t index = keycode - KC_1;
 			
-            if (keycode == KC_MINS) { index = 10;}
-            else if (keycode == KC_EQL) { index = 11;}
+            if (keycode == KC_MINS) { index = 10; }
+            else if (keycode == KC_EQL) { index = 11; }
 
             if (record->event.pressed) {
                 register_code(pgm_read_word(&number_to_function[index]));
