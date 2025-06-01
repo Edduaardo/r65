@@ -55,12 +55,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-void housekeeping_task_user(void) {
-    if (IS_LAYER_ON(_MAC) || IS_LAYER_ON(_MAC_FN)) {
-      gpio_write_pin_low(LED_MAC_PIN);
-    } else {
-      gpio_write_pin_high(LED_MAC_PIN);
+// Handle MAC mode LED logic
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case _MAC:
+        case _MAC_FN:
+            gpio_write_pin_low(LED_MAC_PIN);
+            break;
+        default:
+            gpio_write_pin_high(LED_MAC_PIN);
+            break;
     }
+
+    return state;
 }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
