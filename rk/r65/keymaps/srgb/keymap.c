@@ -27,12 +27,17 @@ const uint16_t PROGMEM number_to_function[12] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (keycode == SWITCH_FN) {
-        if (record->event.pressed) {
-            fn_mode = !fn_mode;
-        }
-        
-        return false;
+    switch (keycode) {
+        case GU_TOGG:
+            if (record->event.pressed) {
+                gpio_write_pin(LED_WIN_LOCK_PIN, keymap_config.no_gui);
+            }
+            break;
+        case SWITCH_FN:
+            if (record->event.pressed) {
+                fn_mode = !fn_mode;
+            }
+            return false;
     }
 
     if (fn_mode) {
