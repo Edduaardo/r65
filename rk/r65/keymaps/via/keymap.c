@@ -43,7 +43,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (fn_mode) {
         if ((keycode >= KC_1 && keycode <= KC_0) || keycode == KC_MINS || keycode == KC_EQL) {
             uint8_t index = keycode - KC_1;
-			
+            
             if (keycode == KC_MINS) { index = 10; }
             else if (keycode == KC_EQL) { index = 11; }
 
@@ -148,9 +148,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_MAC]      = {ENCODER_CCW_CW(_______, _______)},
     [_MAC_FN]   = {ENCODER_CCW_CW(_______, _______)},
     [_ALT_A]    = {ENCODER_CCW_CW(_______, _______)},
-	[_ALT_A_FN] = {ENCODER_CCW_CW(_______, _______)},
-	[_ALT_B]    = {ENCODER_CCW_CW(_______, _______)},
-	[_ALT_B_FN] = {ENCODER_CCW_CW(_______, _______)},
+    [_ALT_A_FN] = {ENCODER_CCW_CW(_______, _______)},
+    [_ALT_B]    = {ENCODER_CCW_CW(_______, _______)},
+    [_ALT_B_FN] = {ENCODER_CCW_CW(_______, _______)},
     [_BOOT]     = {ENCODER_CCW_CW(_______, _______)}
 };
 #endif
