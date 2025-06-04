@@ -20,7 +20,7 @@ enum layer_names {
 
 enum custom_keycodes {
     SWITCH_FN = SAFE_RANGE,
-	SOCD_TOGGLE
+    SOCD_TOGGLE
 };
 
 bool fn_mode = false;
@@ -168,9 +168,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_MAC]      = { ENCODER_CCW_CW(_______, _______) },
     [_MAC_FN]   = { ENCODER_CCW_CW(_______, _______) },
     [_ALT_A]    = { ENCODER_CCW_CW(_______, _______) },
-	[_ALT_A_FN] = { ENCODER_CCW_CW(_______, _______) },
-	[_ALT_B]    = { ENCODER_CCW_CW(_______, _______) },
-	[_ALT_B_FN] = { ENCODER_CCW_CW(_______, _______) },
+    [_ALT_A_FN] = { ENCODER_CCW_CW(_______, _______) },
+    [_ALT_B]    = { ENCODER_CCW_CW(_______, _______) },
+    [_ALT_B_FN] = { ENCODER_CCW_CW(_______, _______) },
     [_BOOT]     = { ENCODER_CCW_CW(_______, _______) }
 };
 #endif
