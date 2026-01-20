@@ -12,7 +12,8 @@
 
 ---
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
+> NOTE: This only works for the 20240319 version of the keyboard's PCB. Please be wary of flashing this on any recent version of the keyboard.
 > This branch only contains files for the **wired ANSI-layout** version of the Royal Kludge R65.
 > **DO NOT** flash this firmware if your keyboard has wireless capabilities.
 > **DO NOT** flash this firmware if you're unsure of your keyboard's variant/don't know much about keyboard modification.
