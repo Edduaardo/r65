@@ -105,10 +105,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_BASE_FN] = LAYOUT(
         KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RGB_MOD, KC_INS,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RM_NEXT, KC_INS,
         _______, TO(_BASE), TO(_MAC), _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_PSCR, _______, KC_PAUSE,
-        _______, _______, _______, _______, SOCD_TOGG, NK_TOGG, _______, _______, RGB_HUI, _______, _______, MO(_BOOT), RGB_VAI, KC_END,
-        FN_TOGG, GU_TOGG, _______, EE_CLR, _______, _______, RGB_SPD, RGB_VAD, RGB_SPI
+        _______, _______, _______, _______, SOCD_TOGG, NK_TOGG, _______, _______, RM_HUEU, _______, _______, MO(_BOOT), RM_VALU, KC_END,
+        FN_TOGG, GU_TOGG, _______, EE_CLR, _______, _______, RM_SPDD, RM_VALD, RM_SPDU
     ),
     [_MAC] = LAYOUT(
         KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_MUTE,
@@ -119,10 +119,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_MAC_FN] = LAYOUT(
         KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RGB_MOD, KC_INS,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RM_NEXT, KC_INS,
         _______, TO(_BASE), TO(_MAC), _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_PSCR, _______, KC_PAUSE,
-        _______, _______, _______, _______, SOCD_TOGG, NK_TOGG, _______, _______, RGB_HUI, _______, _______, MO(_BOOT), RGB_VAI, KC_END,
-        FN_TOGG, _______, _______, EE_CLR, _______, _______, RGB_SPD, RGB_VAD, RGB_SPI
+        _______, _______, _______, _______, SOCD_TOGG, NK_TOGG, _______, _______, RM_HUEU, _______, _______, MO(_BOOT), RM_VALU, KC_END,
+        FN_TOGG, _______, _______, EE_CLR, _______, _______, RM_SPDD, RM_VALD, RM_SPDU
     ),
     [_ALT_A] = LAYOUT(
         KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_MUTE,
@@ -133,10 +133,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_ALT_A_FN] = LAYOUT(
         KC_GRV, KC_MYCM, KC_HOME, KC_MAIL, KC_CALC, KC_SLCT, KC_MSTP, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RGB_MOD, KC_INS,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RM_NEXT, KC_INS,
         _______, TO(_ALT_A), TO(_ALT_B), _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_PSCR, _______, KC_PAUSE,
-        _______, _______, _______, _______, _______, NK_TOGG, _______, _______, RGB_HUI, _______, _______, MO(_BOOT), RGB_VAI, KC_END,
-        FN_TOGG, GU_TOGG, _______, EE_CLR, _______, _______, RGB_SPD, RGB_VAD, RGB_SPI
+        _______, _______, _______, _______, _______, NK_TOGG, _______, _______, RM_HUEU, _______, _______, MO(_BOOT), RM_VALU, KC_END,
+        FN_TOGG, GU_TOGG, _______, EE_CLR, _______, _______, RM_SPDD, RM_VALD, RM_SPDU
     ),
     [_ALT_B] = LAYOUT(
         KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_MUTE,
@@ -147,10 +147,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_ALT_B_FN] = LAYOUT(
         KC_GRV, KC_BRMD, KC_BRMU, KC_F3, KC_F4, KC_BRID, KC_BRIU, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RGB_MOD, KC_INS,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_HOME, KC_SCRL, RM_NEXT, KC_INS,
         _______, TO(_ALT_A), TO(_ALT_B), _______, _______, _______, _______, _______, _______, MO(_BOOT), _______, KC_PSCR, _______, KC_PAUSE,
-        _______, _______, _______, _______, _______, NK_TOGG, _______, _______, RGB_HUI, _______, _______, MO(_BOOT), RGB_VAI, KC_END,
-        FN_TOGG, _______, _______, EE_CLR, _______, _______, RGB_SPD, RGB_VAD, RGB_SPI
+        _______, _______, _______, _______, _______, NK_TOGG, _______, _______, RM_HUEU, _______, _______, MO(_BOOT), RM_VALU, KC_END,
+        FN_TOGG, _______, _______, EE_CLR, _______, _______, RM_SPDD, RM_VALD, RM_SPDU
     ),
     [_BOOT] = LAYOUT(
         QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
