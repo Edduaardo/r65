@@ -29,38 +29,10 @@ jobs:
       - name: Install QMK CLI
         run: curl -fsSL https://install.qmk.fm | sh -s -- --confirm --skip-qmk-toolchains --skip-udev-rules --skip-qmk-flashutils --skip-clean
       
-      - name: Copy r65/master source into QMK upstream
+      - name: Copy r65 source into QMK upstream
         run: cp -r r65/rk qmk/keyboards
 
       - name: Compile firmware
-        uses: carlosperate/arm-none-eabi-gcc-action@v1.12.3
-        with:
-          release: 15.2.Rel1
-      - run: make rk/r65
-        working-directory: ./qmk
-
-      - name: Change branch to vialrgb
-        working-directory: ./r65
-        run: git reset --hard && git checkout vialrgb
-
-      - name: Copy r65/vialrgb source into QMK upstream
-        run: rm -rf qmk/keyboards/rk && cp -r r65/rk qmk/keyboards
-
-      - name: Compile firmware vialrgb
-        uses: carlosperate/arm-none-eabi-gcc-action@v1.12.3
-        with:
-          release: 15.2.Rel1
-      - run: make rk/r65
-        working-directory: ./qmk
-
-      - name: Change branch to signalrgb
-        working-directory: ./r65
-        run: git reset --hard && git checkout signalrgb
-
-      - name: Copy r65/signalrgb source into QMK upstream
-        run: rm -rf qmk/keyboards/rk && cp -r r65/rk qmk/keyboards
-
-      - name: Compile firmware signalrgb
         uses: carlosperate/arm-none-eabi-gcc-action@v1.12.3
         with:
           release: 15.2.Rel1
