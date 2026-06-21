@@ -23,9 +23,6 @@ jobs:
           repository: Edduaardo/r65
           path: r65
 
-      - name: Install packages dependecies
-        run: sudo apt update && sudo apt install -y curl
-
       - name: Install QMK CLI
         run: curl -fsSL https://install.qmk.fm | sh -s -- --confirm --skip-qmk-toolchains --skip-udev-rules --skip-qmk-flashutils --skip-clean
       
