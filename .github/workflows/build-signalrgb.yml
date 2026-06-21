@@ -1,0 +1,37 @@
+name: "Comiple with SignalRGB-QMK upstream"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+
+jobs:
+  compile-signalrgb-qmk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout SignalRGB-QMK
+        uses: actions/checkout@v7
+        with:
+          repository: SRGBmods/QMK
+          ref: master
+          submodules: recursive
+          path: qmk
+      
+      - name: Checkout rk/r65 source
+        uses: actions/checkout@v7
+        with:
+          repository: Edduaardo/r65
+          path: r65
+
+      - name: Install QMK CLI
+        run: curl -fsSL https://install.qmk.fm | sh -s -- --confirm --skip-qmk-toolchains --skip-udev-rules --skip-qmk-flashutils --skip-clean
+      
+      - name: Copy r65 source into SignalRGB-QMK upstream
+        run: cp -r r65/rk qmk/keyboards
+
+      - name: Compile firmware
+        uses: carlosperate/arm-none-eabi-gcc-action@v1.12.3
+        with:
+          release: 15.2.Rel1
+      - run: make rk/r65
+        working-directory: ./qmk
