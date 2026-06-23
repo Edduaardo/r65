@@ -1,4 +1,4 @@
-name: "Comiple with SignalRGB-QMK upstream"
+name: "Compile with SignalRGB-QMK upstream"
 
 on:
   workflow_dispatch:
@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: Edduaardo/r65
+          ref: signalrgb
           path: r65
 
       - name: Install QMK CLI

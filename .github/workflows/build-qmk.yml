@@ -1,4 +1,4 @@
-name: "Comiple with QMK upstream"
+name: "Compile with QMK upstream"
 
 on:
   workflow_dispatch:
